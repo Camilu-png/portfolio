@@ -9,7 +9,7 @@ const C = {
   orangeSoft: "#e3a165",
   white: "#f2e6d6",
   shade: "#d9c8b6",
-  eye: "#8fc princ",
+  
   nose: "#e6a0ac",
   line: "#20161f",
 };
