@@ -28,7 +28,6 @@ const groups: { name: string; tags: string[] }[] = [
   { name: "Modelos & Algoritmos", tags: ["Machine Learning", "PyTorch", "Optimization"] },
 ];
 
-export default function noop() {}
 
 function SkillsPage() {
   const tags = allTags();
