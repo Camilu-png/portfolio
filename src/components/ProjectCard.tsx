@@ -16,7 +16,10 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="lab-card group relative flex flex-col overflow-hidden">
       <div className="relative">
-        <Mockup kind={project.mockup} className="rounded-none border-0 border-b" />
+        <Mockup
+          kind={project.mockup}
+          className="grid h-56 place-items-center rounded-none border-0 border-b"
+        />
         {project.featured ? (
           <span className="absolute top-3 left-3 inline-flex items-center gap-1 rounded-full bg-primary px-2.5 py-1 text-[11px] font-semibold text-primary-foreground">
             <Star className="h-3 w-3" aria-hidden="true" /> Destacado
