@@ -81,8 +81,9 @@ export function CvModal({ open, onClose }: { open: boolean; onClose: () => void 
           <Download className="h-4 w-4" aria-hidden="true" /> Descargar CV en PDF
         </a>
         <p className="mt-3 text-center text-xs text-muted-foreground">
-          Marcador: sube tu PDF a <span className="font-mono">public/cv-camilu.pdf</span> para que
-          la descarga funcione.
+          Marcador: sube tu PDF a{" "}
+          <span className="font-mono">public/camila_arancibia_mobile.pdf</span> para que la descarga
+          funcione.
         </p>
       </div>
     </div>

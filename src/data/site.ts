@@ -4,11 +4,10 @@ export const site = {
   school: "UTFSM",
   graduation: "Marzo 2026",
   tagline: "La curiosidad es una feature.",
-  // TODO: reemplazar con los enlaces reales
-  github: "https://github.com/",
-  linkedin: "https://linkedin.com/",
-  email: "hola@ejemplo.cl",
-  cvUrl: "/cv-camilu.pdf",
+  github: "https://github.com/Camilu-png",
+  linkedin: "https://linkedin.com/in/camila-arancibia/",
+  email: "camila.arancibiaf@sansano.usm.cl",
+  cvUrl: `${import.meta.env.BASE_URL}camila_arancibia_mobile.pdf`,
 };
 
 export const nav = [

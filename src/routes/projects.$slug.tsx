@@ -14,7 +14,10 @@ export const Route = createFileRoute("/projects/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Proyecto no encontrado — Camilú" }, { name: "robots", content: "noindex" }],
+        meta: [
+          { title: "Proyecto no encontrado — Camilú" },
+          { name: "robots", content: "noindex" },
+        ],
       };
     }
     const { project } = loaderData;
@@ -25,6 +28,12 @@ export const Route = createFileRoute("/projects/$slug")({
         { name: "description", content: project.summary },
         { property: "og:title", content: title },
         { property: "og:description", content: project.summary },
+      ],
+      links: [
+        {
+          rel: "canonical",
+          href: `https://Camilu-png.github.io/portfolio/projects/${project.slug}`,
+        },
       ],
     };
   },
@@ -112,16 +121,37 @@ function ProjectDetail() {
           </section>
         ))}
 
-        <section>
-          <h2 className="font-display text-2xl font-semibold tracking-tight">Visuales</h2>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Maquetas esquemáticas de la interfaz — dibujadas en código, no capturas reales.
-          </p>
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <Mockup kind={project.mockup} />
-            <Mockup kind={project.mockup === "phone" ? "grid" : "chart"} />
-          </div>
-        </section>
+        {project.gallery && project.gallery.length > 0 ? (
+          <section>
+            <h2 className="font-display text-2xl font-semibold tracking-tight">Visuales</h2>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              {project.gallery.map((img, i) => (
+                <figure
+                  key={img}
+                  className="overflow-hidden rounded-xl border border-border bg-surface-strong"
+                >
+                  <img
+                    src={`${import.meta.env.BASE_URL}projects/${project.slug}/${img}`}
+                    alt={`Captura ${i + 1} de ${project.title}`}
+                    className="w-full object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+              ))}
+            </div>
+          </section>
+        ) : (
+          <section>
+            <h2 className="font-display text-2xl font-semibold tracking-tight">Visuales</h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Maquetas esquemáticas de la interfaz — dibujadas en código, no capturas reales.
+            </p>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              <Mockup kind={project.mockup} />
+              <Mockup kind={project.mockup === "phone" ? "grid" : "chart"} />
+            </div>
+          </section>
+        )}
 
         <div className="grid gap-6 sm:grid-cols-2">
           <section className="lab-card p-6">

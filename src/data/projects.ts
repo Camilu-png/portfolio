@@ -16,6 +16,8 @@ export interface Project {
   summary: string;
   github?: string;
   demo?: string;
+  image?: string;
+  gallery?: string[];
   mascot: "ocarina" | "yarn" | "curious" | "sleepy";
   accent: "primary" | "secondary";
   mockup: "phone" | "grid" | "chart" | "board";
@@ -27,7 +29,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "ocari",
-    title: "OCARI",
+    title: "Ocaroi",
     subtitle: "Aprender ocarina de 12 agujeros desde el teléfono",
     year: "2025",
     status: "En desarrollo",
@@ -84,13 +86,15 @@ export const projects: Project[] = [
     slug: "pixel-crochet",
     title: "PIXEL CROCHET",
     subtitle: "De pixel art a patrón de crochet tapestry",
-    year: "2025",
+    year: "2026",
     status: "En desarrollo",
     featured: true,
     tags: ["Flutter", "Dart", "Pixel Art", "UX", "Mobile"],
     summary:
       "App que convierte imágenes y pixel art en patrones de crochet tapestry, con conteo de puntos, cambio de color y seguimiento de progreso fila a fila.",
-    github: "https://github.com/",
+    github: "https://github.com/Camilu-png/pixel-crochet/blob/main/README.es.md",
+    image: "pixel-crochet.webp",
+    gallery: ["home.webp", "patterns.webp", "home-patterns.webp", "about.webp", "suggest.webp"],
     mascot: "yarn",
     accent: "secondary",
     mockup: "grid",
@@ -139,14 +143,14 @@ export const projects: Project[] = [
     slug: "asigna-tu-ayudantia",
     title: "ASIGNA TU AYUDANTÍA",
     subtitle: "Asignación de ayudantías con algoritmos de optimización",
-    year: "2024",
+    year: "2026",
     status: "Publicado",
     featured: true,
     tags: ["Python", "Optimization", "FastAPI", "React", "Docker"],
     summary:
       "Sistema que asigna ayudantes a asignaturas considerando preferencias, disponibilidad horaria, carga académica y requisitos del ramo.",
     github: "https://github.com/",
-    demo: "https://example.com",
+    demo: "https://github.com/Camilu-png/student-assistant-scheduling",
     mascot: "curious",
     accent: "primary",
     mockup: "board",
