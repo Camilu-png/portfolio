@@ -103,7 +103,7 @@ function Home() {
       <Page className="py-14">
         <SectionTitle note={`${projects.length} en el archivo`}>Proyectos destacados</SectionTitle>
         <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-          Sin intro larga: esto es lo que he construido.
+          Alguna de las cositas en las que he trabajado.
         </p>
         <div className="mt-7 grid gap-6 md:grid-cols-2">
           {featured.map((p) => (
