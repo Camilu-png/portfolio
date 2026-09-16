@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
 import { milestones, type MilestoneKind } from "@/data/timeline";
 import { Page, PageHeader } from "@/components/Section";
 import { Ada } from "@/components/ada/Ada";
@@ -39,20 +40,14 @@ function TimelinePage() {
       <PageHeader
         eyebrow="Cuaderno de bitácora"
         title="Trayectoria"
-        lead="No es un CV cronológico. Son los momentos donde algo cambió de forma."
+        lead="Momentos importantes en mi desarrollo profesional."
         aside={<Ada pose="curious" className="h-28 w-28 float-soft" />}
       />
 
       <ol className="relative mt-12 ml-3 space-y-8 border-l border-border pl-8 sm:ml-6">
-        {milestones.map((m) => (
-          <li key={m.title} className="relative">
-            <span
-              className={cn(
-                "absolute -left-[41px] mt-1.5 h-3.5 w-3.5 rounded-full border-2 border-background",
-                m.placeholder ? "bg-muted-foreground" : "bg-primary",
-              )}
-            />
-            <div className="lab-card p-5">
+        {milestones.map((m) => {
+          const inner = (
+            <>
               <div className="flex flex-wrap items-center gap-2">
                 <span className="font-mono text-xs text-muted-foreground">{m.date}</span>
                 <span
@@ -72,9 +67,37 @@ function TimelinePage() {
               <h2 className="mt-2 font-display text-xl font-semibold tracking-tight">{m.title}</h2>
               <p className="text-sm text-secondary">{m.place}</p>
               <p className="mt-2 text-sm text-muted-foreground">{m.description}</p>
-            </div>
-          </li>
-        ))}
+              {m.url ? (
+                <span className="mt-3 inline-flex items-center gap-1 font-mono text-xs text-primary">
+                  Ver más <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                </span>
+              ) : null}
+            </>
+          );
+
+          return (
+            <li key={m.title} className="relative">
+              <span
+                className={cn(
+                  "absolute -left-[41px] mt-1.5 h-3.5 w-3.5 rounded-full border-2 border-background",
+                  m.placeholder ? "bg-muted-foreground" : "bg-primary",
+                )}
+              />
+              {m.url ? (
+                <a
+                  href={m.url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="lab-card flex flex-col p-5 transition-colors hover:border-secondary/60 hover:bg-surface-strong"
+                >
+                  {inner}
+                </a>
+              ) : (
+                <div className="lab-card p-5">{inner}</div>
+              )}
+            </li>
+          );
+        })}
       </ol>
     </Page>
   );
