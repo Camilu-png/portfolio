@@ -23,6 +23,7 @@ export const Route = createFileRoute("/projects/")({
         content: "Apps Flutter, optimización, machine learning y experimentos, filtrables por tag.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://Camilu-png.github.io/portfolio/projects" }],
   }),
   component: ProjectsPage,
 });
@@ -39,7 +40,9 @@ function ProjectsPage() {
         eyebrow="Archivo de proyectos"
         title="Proyectos"
         lead="Cada proyecto empezó como una pregunta. Filtra por tecnología para ver por dónde ha andado la curiosidad."
-        aside={<Ada pose="curious" className="h-28 w-28 float-soft" label="Ada revisando filtros" />}
+        aside={
+          <Ada pose="curious" className="h-28 w-28 float-soft" label="Ada revisando filtros" />
+        }
       />
 
       <div className="mt-8">

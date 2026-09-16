@@ -18,6 +18,7 @@ export const Route = createFileRoute("/ai")({
         content: "Una reflexión práctica sobre trabajar con IA sin delegarle el criterio.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://Camilu-png.github.io/portfolio/ai" }],
   }),
   component: AiPage,
 });

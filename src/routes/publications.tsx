@@ -19,6 +19,7 @@ export const Route = createFileRoute("/publications")({
         content: "Libro en coautoría, artículos y papers escritos durante la carrera.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://Camilu-png.github.io/portfolio/publications" }],
   }),
   component: PublicationsPage,
 });

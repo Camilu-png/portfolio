@@ -16,9 +16,11 @@ export const Route = createFileRoute("/timeline")({
       { property: "og:title", content: "Trayectoria — Camilú" },
       {
         property: "og:description",
-        content: "Educación, prácticas, hackathons y publicaciones, contadas sin lenguaje corporativo.",
+        content:
+          "Educación, prácticas, hackathons y publicaciones, contadas sin lenguaje corporativo.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://Camilu-png.github.io/portfolio/timeline" }],
   }),
   component: TimelinePage,
 });

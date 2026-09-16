@@ -23,6 +23,7 @@ export const Route = createFileRoute("/")({
           "Laboratorio personal de proyectos: OCARI, Pixel Crochet, asignación con optimización y pronóstico solar.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://Camilu-png.github.io/portfolio/" }],
   }),
   component: Home,
 });

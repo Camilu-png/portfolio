@@ -15,9 +15,11 @@ export const Route = createFileRoute("/skills")({
       { property: "og:title", content: "Skills & Tags — Camilú" },
       {
         property: "og:description",
-        content: "Un mapa de tecnologías generado desde los proyectos, no desde una lista de deseos.",
+        content:
+          "Un mapa de tecnologías generado desde los proyectos, no desde una lista de deseos.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://Camilu-png.github.io/portfolio/skills" }],
   }),
   component: SkillsPage,
 });
@@ -27,7 +29,6 @@ const groups: { name: string; tags: string[] }[] = [
   { name: "Backend & Datos", tags: ["Python", "FastAPI", "Docker", "Data", "React"] },
   { name: "Modelos & Algoritmos", tags: ["Machine Learning", "PyTorch", "Optimization"] },
 ];
-
 
 function SkillsPage() {
   const tags = allTags();

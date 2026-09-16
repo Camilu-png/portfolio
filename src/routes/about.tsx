@@ -19,6 +19,7 @@ export const Route = createFileRoute("/about")({
         content: "Crochet, música, libros, plantas y una gata calicó llamada Ada.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://Camilu-png.github.io/portfolio/about" }],
   }),
   component: AboutPage,
 });
@@ -57,7 +58,7 @@ function AboutPage() {
       <PageHeader
         eyebrow="Beyond Code"
         title="Sobre mí"
-        lead="Soy Camilú. Me titulo de Ingeniera Civil en Informática en la UTFSM en marzo de 2026, y casi todo lo que he construido empezó fuera del computador."
+        lead="Soy Camilú. Me titulé de Ingeniera Civil en Informática en la UTFSM en marzo de 2026, y casi todo lo que he construido empezó fuera del computador."
         aside={<Ada pose="yarn" className="h-32 w-32 float-soft" label="Ada jugando con lana" />}
       />
 
