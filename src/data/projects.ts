@@ -29,15 +29,16 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "ocari",
-    title: "Ocaroi",
+    title: "Ocari",
     subtitle: "Aprender ocarina de 12 agujeros desde el teléfono",
-    year: "2025",
+    year: "2026",
     status: "En desarrollo",
     featured: true,
-    tags: ["Flutter", "Dart", "Audio", "UX", "Mobile"],
+    tags: ["Flutter", "Dart", "Audio", "GitHub Actions", "Mobile", "Firebase"],
     summary:
-      "Una app para aprender y tocar la ocarina de 12 agujeros: digitaciones interactivas, afinador, biblioteca de melodías y práctica guiada.",
-    github: "https://github.com/",
+      "Una app para aprender y tocar la ocarina de 12 agujeros: suena la canción mientras un track de notas estilo Guitar Hero y una ocarina animada muestran en tiempo real la digitación exacta y la duración de cada nota, con velocidad ajustable para practicar a tu ritmo.",
+    github: "https://github.com/Camilu-png/Ocari",
+    image: "ocari.webp",
     mascot: "ocarina",
     accent: "primary",
     mockup: "phone",
@@ -45,46 +46,48 @@ export const projects: Project[] = [
       {
         heading: "Resumen",
         body: [
-          "OCARI nace de una pregunta muy concreta: ¿por qué aprender ocarina sigue siendo tan analógico? La mayoría de los recursos son PDFs con diagramas estáticos o videos difíciles de seguir mientras tienes el instrumento en las manos.",
-          "La app entrega digitaciones interactivas para la ocarina de 12 agujeros, un afinador en tiempo real y una biblioteca de melodías con práctica paso a paso.",
+          "Ocari nace de un problema en concreto: ¿Cómo puedo tocar la ocarina si no sé sobre música? Las canciones con las que aprendí a tocar tenían el dibujo de la ocarina con la posición de los dedos sobre su respectiva nota musical; mi problema es que no sé cuánto tiempo duraba esa nota; si no me sabía el ritmo de la canción, no era capaz de tocarla.",
+          "La app entrega digitaciones interactivas para la ocarina de 12 agujeros, con el tiempo que debe durar cada nota, una sección para practicar y una biblioteca de melodías.",
         ],
       },
       {
         heading: "Problema",
         body: [
-          "Los diagramas de digitación tradicionales no dicen nada sobre el tiempo, la respiración ni la afinación real que está produciendo quien toca.",
-          "Además, cada fabricante numera los agujeros distinto, así que el material disponible online es inconsistente y confunde a quien recién parte.",
+          "Actualmente existen tablaturas de la ocarina de 12 agujeros, pero estas suelen no tener los tiempos de la duración de las notas, o si los tienen, están documentadas a través de una figura musical, provocando que cualquier persona que no tenga nociones musicales no pueda interpretar una canción. Haciendo que el proceso de acercamiento a este instrumento sea más difícil.",
+          "Además, esta información se tiene a través de tablatura en archivos PDF o imágenes, entorpeciendo la interpretación cuando se está tocando la ocarina, especialmente en estos tiempos digitales.",
         ],
       },
       {
         heading: "Enfoque",
         body: [
-          "Modelé la ocarina como un mapa de estados: cada nota es una combinación binaria de 12 agujeros. Eso permite generar digitaciones en lugar de dibujarlas a mano y soportar distintas afinaciones con el mismo motor.",
-          "Sobre ese modelo construí una capa visual en Flutter donde la ocarina se ilumina nota a nota, sincronizada con la melodía que se está practicando.",
+          "Modelé cada nota como una estructura autodescriptiva: su digitación (agrupada en dedos, pulgares e intermedios), su timestamp y su duración vienen precalculados en la melodía. Eso hace que el render sea 100% guiado por datos: agregar una canción nueva no requiere tocar ni la UI ni el motor de dibujo.",
+          "Sobre ese modelo construí una capa visual en Flutter donde la ocarina se ilumina nota a nota, sincronizada con el audio de la melodía que se está practicando.",
         ],
       },
       {
         heading: "Detalles técnicos",
         body: [
-          "Flutter + Dart con arquitectura por capas (dominio, datos, presentación) y estado manejado con providers.",
-          "Análisis de pitch en tiempo real desde el micrófono con detección de frecuencia fundamental y suavizado para evitar saltos por ruido ambiente.",
-          "Las melodías se almacenan como estructuras declarativas de notas y duraciones, lo que permite agregar repertorio sin tocar la UI.",
+          "Flutter + Dart con arquitectura feature-first en capas (dominio, datos, presentación) y estado manejado con Riverpod.",
+          "Sincronización audio-nota en tiempo real: búsqueda binaria sobre los timestamps de cada nota, con un track de notas estilo Guitar Hero renderizado en CustomPaint que solo pinta el rango visible para mantener la fluidez.",
+          "Las melodías se almacenan como estructuras declarativas (nota, digitación, timestamp y duración), lo que permite agregar repertorio sin tocar la UI.",
         ],
       },
     ],
     challenges: [
-      "Detectar el pitch de un instrumento de soplo con armónicos suaves y mucho aire de fondo.",
-      "Mantener la animación de digitación sincronizada con el audio sin bloquear el hilo de UI.",
-      "Diseñar una interfaz usable con el instrumento en ambas manos y el teléfono apoyado.",
+      "Renderizar un track de notas en scroll vertical continuo con CustomPaint sin drops de frame en dispositivos de gama media.",
+      "Mantener la ocarina animada sincronizada con la posición del audio mientras la UI se reconstruye en cada actualización.",
+      "Diseñar una interfaz usable con el instrumento en ambas manos — portrait y landscape con layouts completamente distintos.",
     ],
     learned: [
-      "Procesamiento de señales aplicado: ventaneo, autocorrelación y por qué la teoría se ve distinta con un micrófono real.",
-      "Que modelar bien el dominio (la ocarina como estados) ahorra semanas de UI.",
+      "Que una búsqueda binaria sobre timestamps convierte la lista de notas de una canción en un cursor constante: posicionarse en cualquier punto del audio es O(log n).",
+      "Que pintar solo el rango visible del track en CustomPaint, en lugar de la melodía completa, mantiene el render fluido sin importar la duración de la canción.",
+      "Que modelar bien el dominio (cada nota autodescriptiva) ahorra semanas de UI: una canción nueva es un archivo JSON, nunca código.",
+      "Que quizás pude haber aprendido un poco de teoría musical",
     ],
   },
   {
     slug: "pixel-crochet",
-    title: "PIXEL CROCHET",
+    title: "Pixel Crochet",
     subtitle: "De pixel art a patrón de crochet tapestry",
     year: "2026",
     status: "En desarrollo",
@@ -141,7 +144,7 @@ export const projects: Project[] = [
   },
   {
     slug: "asigna-tu-ayudantia",
-    title: "ASIGNA TU AYUDANTÍA",
+    title: "Asigna tu ayudantia",
     subtitle: "Asignación de ayudantías con algoritmos de optimización",
     year: "2026",
     status: "Publicado",
@@ -198,7 +201,7 @@ export const projects: Project[] = [
   },
   {
     slug: "solar-forecasting",
-    title: "SOLAR FORECASTING",
+    title: "Solar Forecasting",
     subtitle: "Pronóstico de generación solar con redes neuronales",
     year: "2024",
     status: "Investigación",
