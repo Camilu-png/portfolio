@@ -4,36 +4,28 @@ export interface Publication {
   role: string;
   date: string;
   description: string;
-  link?: string;
+  url?: string;
   placeholder?: boolean;
 }
 
 export const publications: Publication[] = [
   {
-    title: "Coautora de un libro",
+    title: "Tesis — Un algoritmo para la planificación de horarios de ayudantía",
+    kind: "Paper",
+    role: "Autora",
+    date: "2026",
+    url: "https://repositorio.usm.cl/handle/123456789/78182",
+    description:
+      "Analiza el problema de asisgnación de horarios de ayudantías en la universidad. Estudia la carrera de Ingeniería Civil Informática buscando maximizar la cantidad de estudiantes que pueden asistir a un bloque definido, priorizando aquellos que optimicen la distribución horaria de los estudiantes a través de penalizaciones centradas en la preferencia estudiantil.",
+  },
+  {
+    title:
+      "Humanidades digitales: Reflexiones en torno a la sociedad de la información y desarrollo",
     kind: "Libro",
     role: "Coautora",
-    date: "2025",
+    date: "2022",
+    url: "https://vinculacion.usm.cl/noticias/editorial-usm-lanza-libro-que-compila-ensayos-de-estudiantes-de-ingenieria-civil-informatica/",
     description:
-      "Participación como coautora en una publicación colectiva. Escribir junto a otras personas obliga a defender cada afirmación y a traducir lo técnico a un lenguaje que sobreviva fuera del contexto.",
-    placeholder: true,
-  },
-  {
-    title: "Artículo — título por confirmar",
-    kind: "Artículo",
-    role: "Autora",
-    date: "Por completar",
-    description:
-      "Marcador: reemplazar con el título real, el medio de publicación, la fecha y un enlace.",
-    placeholder: true,
-  },
-  {
-    title: "Paper — título por confirmar",
-    kind: "Paper",
-    role: "Coautora",
-    date: "Por completar",
-    description:
-      "Marcador: reemplazar con el título, la conferencia o revista, los coautores y el DOI o enlace.",
-    placeholder: true,
+      'Participación como coautora de un libro. Mi ensayo, "Consideraciones en torno a la política nacional de inteligencia artificial" es resultados del Taller de Humanidades Digitales.',
   },
 ];

@@ -65,9 +65,9 @@ function PublicationsPage() {
                   {p.title}
                 </h2>
                 <p className="mt-2 text-sm text-muted-foreground">{p.description}</p>
-                {p.link ? (
+                {p.url ? (
                   <a
-                    href={p.link}
+                    href={p.url}
                     target="_blank"
                     rel="noreferrer noopener"
                     className="mt-3 inline-flex items-center gap-1.5 text-sm text-primary hover:underline"
