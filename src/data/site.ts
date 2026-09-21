@@ -8,6 +8,7 @@ export const site = {
   linkedin: "https://linkedin.com/in/camila-arancibia/",
   email: "camila.arancibiaf@sansano.usm.cl",
   cvUrl: `${import.meta.env.BASE_URL}camila_arancibia_mobile.pdf`,
+  analyticsId: "G-SF86KCJFW5",
 };
 
 export const nav = [

@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { site } from "@/data/site";
 
 function NotFoundComponent() {
   return (
@@ -147,6 +148,19 @@ function RootShell({ children }: { children: ReactNode }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {site.analyticsId && (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${site.analyticsId}`}
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${site.analyticsId}',{send_page_view:false});gtag('event','page_view',{page_path:window.location.pathname});`,
+              }}
+            />
+          </>
+        )}
       </head>
       <body>
         {children}
@@ -158,6 +172,20 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const router = useRouter();
+
+  useEffect(() => {
+    const id = site.analyticsId;
+    if (!id) return;
+
+    return router.subscribe("onResolved", (event) => {
+      if (!event.hrefChanged || !event.pathChanged) return;
+      const gtag = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
+      if (typeof gtag === "function") {
+        gtag("event", "page_view", { page_path: event.toLocation.pathname });
+      }
+    });
+  }, [router]);
 
   return (
     <QueryClientProvider client={queryClient}>
