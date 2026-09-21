@@ -13,6 +13,15 @@ const isGithubPages = process.env["GITHUB_ACTIONS"] === "true";
 const basePath = isGithubPages ? "/portfolio" : "";
 
 export default defineConfig({
+  // Lovable's preview deploys via Nitro/Cloudflare Workers. GitHub Pages only
+  // serves the prerendered static files, so these runtime-only headers mark the
+  // Lovable worker as noindex while the GitHub Pages version stays indexable.
+  // The preset's public type is narrow; the runtime forwards the whole object.
+  nitro: {
+    routeRules: {
+      "/**": { headers: { "X-Robots-Tag": "noindex" } },
+    },
+  } as unknown as { preset?: string },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
