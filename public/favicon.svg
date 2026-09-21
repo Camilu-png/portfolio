@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 28 132 116" preserveAspectRatio="xMidYMid meet">
+  <path d="M60 88 58 40l38 22z" fill="#d2854a" stroke="#20161f" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M65 80 64 52l22 13z" fill="#e6a0ac" opacity="0.75"/>
+  <path d="M160 88l2-48-38 22z" fill="#2f2333" stroke="#20161f" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M155 80l1-28-22 13z" fill="#e6a0ac" opacity="0.55"/>
+
+  <path d="M110 44c33 0 53 21 53 48s-24 44-53 44-53-17-53-44 20-48 53-48z" fill="#f2e6d6" stroke="#20161f" stroke-width="3.5"/>
+
+  <path d="M110 44c22 0 39 10 47 27-9 12-26 17-42 12-9-3-12-19-5-39z" fill="#2f2333" opacity="0.93"/>
+  <path d="M73 56c-9 8-15 21-16 36 10 4 21 1 26-8 5-10 1-21-10-28z" fill="#d2854a" opacity="0.92"/>
+  <path d="M150 112c7-4 12-11 13-19-8-2-15 2-18 9-2 5 0 9 5 10z" fill="#d2854a" opacity="0.8"/>
+
+  <ellipse cx="89" cy="95" rx="11" ry="12" fill="#93c47d" stroke="#20161f" stroke-width="3"/>
+  <ellipse cx="131" cy="95" rx="11" ry="12" fill="#93c47d" stroke="#20161f" stroke-width="3"/>
+  <ellipse cx="89" cy="95" rx="4" ry="9" fill="#5d8c4c"/>
+  <ellipse cx="131" cy="95" rx="4" ry="9" fill="#5d8c4c"/>
+  <circle cx="92" cy="90" r="3" fill="#fdf6ea"/>
+  <circle cx="134" cy="90" r="3" fill="#fdf6ea"/>
+
+  <path d="M104 110h12l-6 7z" fill="#e6a0ac" stroke="#20161f" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M110 117v5M110 122c-3 5-10 5-13 1M110 122c3 5 10 5 13 1" fill="none" stroke="#20161f" stroke-width="2.5" stroke-linecap="round"/>
+
+  <g stroke="#d9c8b6" stroke-width="2" stroke-linecap="round" opacity="0.9">
+    <path d="M78 112 52 106M78 118 54 120M142 112l26-6M142 118l24 2"/>
+  </g>
+</svg>

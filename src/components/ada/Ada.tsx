@@ -21,6 +21,7 @@ interface AdaProps {
   pose?: AdaPose;
   className?: string;
   label?: string;
+  headOnly?: boolean;
 }
 
 /**
@@ -28,12 +29,12 @@ interface AdaProps {
  * Calico patches (black + orange), white chest and paws, green eyes,
  * pink nose, large curious ears.
  */
-export function Ada({ pose = "curious", className, label }: AdaProps) {
+export function Ada({ pose = "curious", className, label, headOnly }: AdaProps) {
   const describedBy = label ? `ada-title-${pose}` : undefined;
 
   return (
     <svg
-      viewBox="0 0 220 220"
+      viewBox={headOnly ? "40 28 132 116" : "0 0 220 220"}
       className={cn("h-40 w-40", className)}
       role={label ? "img" : "presentation"}
       aria-hidden={label ? undefined : true}

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Github, Linkedin, Menu, X, FileText } from "lucide-react";
 import { nav, site } from "@/data/site";
 import { CvModal } from "@/components/CvModal";
+import { Ada } from "@/components/ada/Ada";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
@@ -13,9 +14,12 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
       <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 lg:flex lg:justify-between">
         <Link to="/" className="flex min-w-0 items-center gap-2">
-          <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-primary font-mono text-sm font-bold text-primary-foreground">
-            c
-          </span>
+          <Ada
+            pose="curious"
+            headOnly
+            className="h-9 w-9 shrink-0"
+            label="Ada, la mascota del sitio"
+          />
           <span className="truncate font-display text-lg font-semibold tracking-tight">
             Camilú
           </span>
