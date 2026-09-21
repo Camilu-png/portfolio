@@ -88,14 +88,15 @@ export const projects: Project[] = [
   {
     slug: "pixel-crochet",
     title: "Pixel Crochet",
-    subtitle: "De pixel art a patrón de crochet tapestry",
+    subtitle: "De imagen (o patrón de texto) a guía de tapestry",
     year: "2026",
-    status: "En desarrollo",
+    status: "Publicado",
     featured: true,
-    tags: ["Flutter", "Dart", "Pixel Art", "UX", "Mobile"],
+    tags: ["Flutter", "Dart", "Pixel Art", "UX", "Open Source"],
     summary:
-      "App que convierte imágenes y pixel art en patrones de crochet tapestry, con conteo de puntos, cambio de color y seguimiento de progreso fila a fila.",
+      "App que convierte imágenes o patrones de texto (estilo Stitch Fiddle) en guías de crochet tapestry: cuenta los puntos por color, ajusta las lanas y marca tu progreso fila a fila, sin contar a mano.",
     github: "https://github.com/Camilu-png/pixel-crochet/blob/main/README.es.md",
+    demo: "https://pixel-crochet.vercel.app/",
     image: "pixel-crochet.webp",
     gallery: ["home.webp", "patterns.webp", "home-patterns.webp", "about.webp", "suggest.webp"],
     mascot: "yarn",
@@ -105,40 +106,40 @@ export const projects: Project[] = [
       {
         heading: "Resumen",
         body: [
-          "El crochet tapestry es literalmente programar con hilo: cada punto es un píxel y cada fila se lee en una dirección distinta. PIXEL CROCHET toma esa analogía en serio.",
-          "Cargas una imagen o dibujas pixel art dentro de la app, y obtienes un patrón contado, con paleta reducida a los colores de lana que realmente tienes.",
+          "El crochet tapestry es literalmente programar con hilo: cada punto es un píxel y cada fila se lee en una dirección distinta. Pixel Crochet toma esa analogía en serio.",
+          "Subes una imagen de pixel art o punto de cruz —o pegas un patrón de texto de Stitch Fiddle— y obtienes un patrón contado por bloques de color, mapeado a las lanas que de verdad tienes y ajustable antes de tejer.",
         ],
       },
       {
         heading: "Problema",
         body: [
           "Convertir una imagen en patrón a mano implica cuadricular, contar puntos, elegir colores y llevar la cuenta de la fila actual. Un error de conteo se descubre veinte filas después.",
-          "Las herramientas existentes son de escritorio, exportan PDFs y no acompañan durante el tejido.",
+          "Las herramientas actuales generan el patrón y te dejan con la cuenta a mano: ninguna acompaña la ejecución fila a fila mientras tejes.",
         ],
       },
       {
         heading: "Enfoque",
         body: [
-          "Pipeline de imagen: redimensionado a la grilla de puntos, cuantización de color con k-means sobre una paleta definida por la usuaria, y limpieza de píxeles aislados que serían imposibles de tejer.",
-          "Modo tejido: una fila activa a la vez, contador de puntos por color, y memoria de progreso para retomar donde quedaste.",
+          "Pipeline de imagen: la imagen se redimensiona a la grilla de puntos elegida y cada celda toma el color predominante de su región (no un promedio); los tonos cercanos se cuantizan y cada color se mapea a la lana más parecida de una paleta real, con opción de reasignarlo antes de importar.",
+          "Modo tejido: una fila activa a la vez con su dirección de lectura, bloques de color ya contados, tocar para marcar progreso y guardado automático para retomar justo donde quedaste.",
         ],
       },
       {
         heading: "Detalles técnicos",
         body: [
-          "Flutter con canvas custom para renderizar grillas grandes sin perder fluidez al hacer zoom.",
-          "Cuantización de color en un isolate separado para no congelar la interfaz con imágenes grandes.",
-          "Corrección de proporción: un punto de crochet no es cuadrado, así que la grilla se compensa para que el resultado tejido no salga estirado.",
+          "Flutter: cada fila del patrón se guarda como bloques de color (no punto por punto) y un CustomPainter dibuja la grilla recorriendo esos bloques, con resaltado de la fila activa.",
+          "Cuantización de color, extracción de grilla y parseo de patrones de texto corren en isolates (compute) para no congelar la interfaz con imágenes grandes.",
+          "Localización completa en inglés y español (flutter_localizations + intl) y persistencia local para conservar proyectos entre sesiones.",
         ],
       },
     ],
     challenges: [
-      "Renderizar grillas de miles de celdas con zoom y scroll fluidos.",
+      "Recorrer patrones de miles de puntos sin recálculo por celda (los bloques de color reducen el trabajo del painter).",
       "Reducir colores sin perder los rasgos que hacen reconocible una imagen pequeña.",
-      "Traducir la relación de aspecto real del punto de crochet a la grilla en pantalla.",
+      "Parsear patrones de texto de herramientas como Stitch Fiddle, con filas que alternan dirección y formatos de color poco consistentes.",
     ],
     learned: [
-      "Que las restricciones físicas (grosor de lana, tamaño de aguja) son requisitos de software tan reales como cualquier otro.",
+      "Que las restricciones físicas del medio —colores de lana reales, filas que se tejen en ambas direcciones— son requisitos de software tan legítimos como cualquier otro.",
       "Manejo de isolates y rendimiento de canvas en Flutter.",
     ],
   },
