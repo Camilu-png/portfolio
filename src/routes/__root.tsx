@@ -15,6 +15,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { site } from "@/data/site";
 
+const SITE_URL = "https://Camilu-png.github.io/portfolio";
+const OG_IMAGE = `${SITE_URL}/og.png`;
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -89,12 +92,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: "Laboratorio personal de proyectos de ingeniería.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "es_CL" },
+      { property: "og:site_name", content: "Portafolio de Camilú" },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:type", content: "image/png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Camilú, ingeniera civil en informática" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Camilú — Ingeniera Civil en Informática" },
       {
         name: "twitter:description",
         content: "Laboratorio personal de proyectos de ingeniería.",
       },
+      { name: "twitter:image", content: OG_IMAGE },
+      { name: "twitter:image:alt", content: "Camilú, ingeniera civil en informática" },
     ],
     links: [
       {
@@ -118,26 +130,59 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const personId = `${SITE_URL}/#person`;
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Camila Arancibia Faúndez",
-    alternateName: "Camilú",
-    jobTitle: "Ingeniera Civil en Informática",
-    url: "https://Camilu-png.github.io/portfolio",
-    sameAs: ["https://github.com/Camilu-png", "https://linkedin.com/in/camila-arancibia/"],
-    knowsAbout: [
-      "Flutter",
-      "Dart",
-      "Python",
-      "Machine Learning",
-      "Mobile Development",
-      "Optimization",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: `${SITE_URL}/`,
+        name: "Portafolio de Camilú",
+        inLanguage: "es-CL",
+        description:
+          "Portafolio de Camila Arancibia Faúndez (Camilú), ingeniera civil en informática: proyectos, publicaciones, trayectoria y experimentos.",
+        publisher: { "@id": personId },
+      },
+      {
+        "@type": "Person",
+        "@id": personId,
+        name: "Camila Arancibia Faúndez",
+        alternateName: ["Camilú", "Camilu-png", "camila-arancibia"],
+        jobTitle: "Ingeniera Civil en Informática",
+        description:
+          "Ingeniera civil en informática (Universidad Técnica Federico Santa María, Chile, título en marzo de 2026). Desarrolla software móvil, backend y modelos de aprendizaje automático. Autora de una tesis sobre asignación de horarios con algoritmos de optimización.",
+        url: `${SITE_URL}/`,
+        image: OG_IMAGE,
+        mainEntityOfPage: { "@id": `${SITE_URL}/#website` },
+        sameAs: [
+          "https://github.com/Camilu-png",
+          "https://linkedin.com/in/camila-arancibia/",
+        ],
+        knowsLanguage: ["es", "en"],
+        knowsAbout: [
+          "Flutter",
+          "Dart",
+          "Python",
+          "Machine Learning",
+          "Mobile Development",
+          "Optimization",
+          "Software Engineering",
+        ],
+        hasOccupation: {
+          "@type": "Occupation",
+          name: "Software Engineer",
+          occupationalCategory: "Engineering",
+          skills: "Flutter, Dart, Python, machine learning, optimization",
+          occupationLocation: { "@type": "Country", name: "Chile" },
+        },
+        alumniOf: {
+          "@type": "CollegeOrUniversity",
+          name: "Universidad Técnica Federico Santa María",
+          alternateName: "UTFSM",
+        },
+      },
     ],
-    alumniOf: {
-      "@type": "EducationalOrganization",
-      name: "Universidad Técnica Federico Santa María",
-    },
   };
 
   return (
