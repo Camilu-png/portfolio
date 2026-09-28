@@ -20,6 +20,16 @@ dist-ssr
 .wrangler/
 .dev.vars
 
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Caches and build metadata
+.cache/
+*.tsbuildinfo
+coverage/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
