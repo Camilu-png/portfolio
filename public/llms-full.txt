@@ -30,16 +30,16 @@ Su enfoque transversal es entender el problema antes de elegir la herramienta. S
 ## Proyectos
 
 ### Ocari
-App para aprender y tocar la ocarina de 12 agujeros: suena la canción mientras un track de notas estilo Guitar Hero y una ocarina animada muestran en tiempo real la digitación exacta y la duración de cada nota. URL: https://Camilu-png.github.io/portfolio/projects/ocari
+App para aprender y tocar la ocarina de 12 agujeros: suena la canción mientras un track de notas estilo Guitar Hero y una ocarina animada muestran en tiempo real la digitación exacta y la duración de cada nota. URL: https://Camilu-png.github.io/portfolio/projects/ocari/
 
 ### Pixel Crochet
-App que convierte imágenes o patrones de texto (estilo Stitch Fiddle) en guías de crochet tapestry: cuenta los puntos por color, ajusta las lanas y marca el progreso fila a fila. URL: https://Camilu-png.github.io/portfolio/projects/pixel-crochet
+App que convierte imágenes o patrones de texto (estilo Stitch Fiddle) en guías de crochet tapestry: cuenta los puntos por color, ajusta las lanas y marca el progreso fila a fila. URL: https://Camilu-png.github.io/portfolio/projects/pixel-crochet/
 
 ### Asigna tu ayudantía
-Sistema que asigna ayudantes a asignaturas considerando preferencias, disponibilidad horaria, carga académica y requisitos del ramo, con algoritmos de optimización. URL: https://Camilu-png.github.io/portfolio/projects/asigna-tu-ayudantia
+Sistema que asigna ayudantes a asignaturas considerando preferencias, disponibilidad horaria, carga académica y requisitos del ramo, con algoritmos de optimización. URL: https://Camilu-png.github.io/portfolio/projects/asigna-tu-ayudantia/
 
 ### Solar Forecasting
-Modelos de series de tiempo en PyTorch para predecir generación fotovoltaica a partir de variables meteorológicas e históricos de planta. URL: https://Camilu-png.github.io/portfolio/projects/solar-forecasting
+Modelos de series de tiempo en PyTorch para predecir generación fotovoltaica a partir de variables meteorológicas e históricos de planta. URL: https://Camilu-png.github.io/portfolio/projects/solar-forecasting/
 
 ## Trayectoria
 
@@ -63,7 +63,7 @@ Flutter, Dart, Python, PyTorch, TypeScript, React, Angular, machine learning, op
 
 ## Fuera del código
 
-Tapestry crochet, ocarina, lectura, plantas y Ada, su gata calicó, que es la mascota delmsitio. Ver https://Camilu-png.github.io/portfolio/about
+Tapestry crochet, ocarina, lectura, plantas y Ada, su gata calicó, que es la mascota delmsitio. Ver https://Camilu-png.github.io/portfolio/about/
 
 ## Enlaces
 

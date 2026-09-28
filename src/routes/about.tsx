@@ -19,7 +19,7 @@ export const Route = createFileRoute("/about")({
         content: "Crochet, música, libros, plantas y una gata calicó llamada Ada.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://Camilu-png.github.io/portfolio/about" }],
+    links: [{ rel: "canonical", href: "https://Camilu-png.github.io/portfolio/about/" }],
   }),
   component: AboutPage,
 });

@@ -21,20 +21,20 @@ Datos que identifican a esta persona:
 ## Páginas
 
 - [Portafolio (inicio)](https://Camilu-png.github.io/portfolio/): resumen de proyectos, skills y publicaciones. Es la página principal de referencia sobre quién es.
-- [Sobre mí](https://Camilu-png.github.io/portfolio/about): biografía, formación y enfoque profesional.
-- [Proyectos](https://Camilu-png.github.io/portfolio/projects): índice de todos los proyectos con contexto y stack.
-- [Skills & Tags](https://Camilu-png.github.io/portfolio/skills): tecnologías y áreas de conocimiento.
-- [Trayectoria](https://Camilu-png.github.io/portfolio/timeline): hitos cronológicos (educación, prácticas, hackathons, publicaciones).
-- [Publicaciones](https://Camilu-png.github.io/portfolio/publications): tesis y publicaciones académicas con enlaces.
-- [IA en Ingeniería](https://Camilu-png.github.io/portfolio/ai): postura profesional sobre el uso de IA en el desarrollo de software.
+- [Sobre mí](https://Camilu-png.github.io/portfolio/about/): biografía, formación y enfoque profesional.
+- [Proyectos](https://Camilu-png.github.io/portfolio/projects/): índice de todos los proyectos con contexto y stack.
+- [Skills & Tags](https://Camilu-png.github.io/portfolio/skills/): tecnologías y áreas de conocimiento.
+- [Trayectoria](https://Camilu-png.github.io/portfolio/timeline/): hitos cronológicos (educación, prácticas, hackathons, publicaciones).
+- [Publicaciones](https://Camilu-png.github.io/portfolio/publications/): tesis y publicaciones académicas con enlaces.
+- [IA en Ingeniería](https://Camilu-png.github.io/portfolio/ai/): postura profesional sobre el uso de IA en el desarrollo de software.
 - [CV (PDF)](https://Camilu-png.github.io/portfolio/camila_arancibia_mobile.pdf): currículum descargable.
 
 ## Proyectos destacados
 
-- [Ocari](https://Camilu-png.github.io/portfolio/projects/ocari): app móvil para aprender ocarina de 12 agujeros.
-- [Pixel Crochet](https://Camilu-png.github.io/portfolio/projects/pixel-crochet): convierte una imagen o patrón de texto en una guía de tapestry crochet.
-- [Asigna tu ayudantía](https://Camilu-png.github.io/portfolio/projects/asigna-tu-ayudantia): solver de asignación de horarios de ayudantías con algoritmos de optimización.
-- [Solar Forecasting](https://Camilu-png.github.io/portfolio/projects/solar-forecasting): pronóstico de generación solar con redes neuronales.
+- [Ocari](https://Camilu-png.github.io/portfolio/projects/ocari/): app móvil para aprender ocarina de 12 agujeros.
+- [Pixel Crochet](https://Camilu-png.github.io/portfolio/projects/pixel-crochet/): convierte una imagen o patrón de texto en una guía de tapestry crochet.
+- [Asigna tu ayudantía](https://Camilu-png.github.io/portfolio/projects/asigna-tu-ayudantia/): solver de asignación de horarios de ayudantías con algoritmos de optimización.
+- [Solar Forecasting](https://Camilu-png.github.io/portfolio/projects/solar-forecasting/): pronóstico de generación solar con redes neuronales.
 
 ## Tesis
 

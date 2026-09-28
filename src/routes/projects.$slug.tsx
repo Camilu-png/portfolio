@@ -32,7 +32,7 @@ export const Route = createFileRoute("/projects/$slug")({
       links: [
         {
           rel: "canonical",
-          href: `https://Camilu-png.github.io/portfolio/projects/${project.slug}`,
+          href: `https://Camilu-png.github.io/portfolio/projects/${project.slug}/`,
         },
       ],
     };

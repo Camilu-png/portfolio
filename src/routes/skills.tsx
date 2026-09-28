@@ -19,7 +19,7 @@ export const Route = createFileRoute("/skills")({
           "Un mapa de tecnologías generado desde los proyectos, no desde una lista de deseos.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://Camilu-png.github.io/portfolio/skills" }],
+    links: [{ rel: "canonical", href: "https://Camilu-png.github.io/portfolio/skills/" }],
   }),
   component: SkillsPage,
 });

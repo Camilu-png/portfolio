@@ -23,7 +23,7 @@ export const Route = createFileRoute("/projects/")({
         content: "Apps Flutter, optimización, machine learning y experimentos, filtrables por tag.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://Camilu-png.github.io/portfolio/projects" }],
+    links: [{ rel: "canonical", href: "https://Camilu-png.github.io/portfolio/projects/" }],
   }),
   component: ProjectsPage,
 });

@@ -21,7 +21,7 @@ export const Route = createFileRoute("/timeline")({
           "Educación, prácticas, hackathons y publicaciones, contadas sin lenguaje corporativo.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://Camilu-png.github.io/portfolio/timeline" }],
+    links: [{ rel: "canonical", href: "https://Camilu-png.github.io/portfolio/timeline/" }],
   }),
   component: TimelinePage,
 });
