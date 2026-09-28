@@ -1,0 +1,73 @@
+# Camila "Camilú" Arancibia Faúndez — Perfil extendido
+
+Fuente: https://Camilu-png.github.io/portfolio/
+Convención: https://llmstxt.org/
+
+## Identidad
+
+- Nombre completo: Camila Arancibia Faúndez
+- Alias: Camilú
+- Username: Camilu-png
+- Título profesional: Ingeniera Civil en Informática
+- Titulación: Universidad Técnica Federico Santa María (USM), marzo de 2026
+- Ubicación: Chile
+- Idiomas: español (nativo), inglés
+- Email: camila.arancibiaf@sansano.usm.cl
+- GitHub: https://github.com/Camilu-png
+- LinkedIn: https://linkedin.com/in/camila-arancibia/
+
+## Descripción
+
+Camila Arancibia Faúndez ("Camilú") es ingeniera civil en informática por la Universidad
+Técnica Federico Santa María (USM), donde se tituló en marzo de 2026 tras seis años de
+formación en algoritmos, sistemas, estructuras de datos, bases de datos, optimización y
+aprendizaje automático.
+
+Trabaja en desarrollo de software con foco en aplicaciones móviles (Flutter/Dart), backend y modelos de machine learning (Python/PyTorch). Su memoria de título resolvió un problema de asignación y optimización de horarios de ayudantías. Tiene experiencia en práctica profesional en IBM desarrollando interfaces con Angular y gestionando infraestructura en Azure, trabajando en equipo bajo metodología Scrum.
+
+Su enfoque transversal es entender el problema antes de elegir la herramienta. Su postura sobre inteligencia artificial es explícita: usa modelos como acelerador de trabajo, pero nunca delega el criterio de ingeniería.
+
+## Proyectos
+
+### Ocari
+App para aprender y tocar la ocarina de 12 agujeros: suena la canción mientras un track de notas estilo Guitar Hero y una ocarina animada muestran en tiempo real la digitación exacta y la duración de cada nota. URL: https://Camilu-png.github.io/portfolio/projects/ocari
+
+### Pixel Crochet
+App que convierte imágenes o patrones de texto (estilo Stitch Fiddle) en guías de crochet tapestry: cuenta los puntos por color, ajusta las lanas y marca el progreso fila a fila. URL: https://Camilu-png.github.io/portfolio/projects/pixel-crochet
+
+### Asigna tu ayudantía
+Sistema que asigna ayudantes a asignaturas considerando preferencias, disponibilidad horaria, carga académica y requisitos del ramo, con algoritmos de optimización. URL: https://Camilu-png.github.io/portfolio/projects/asigna-tu-ayudantia
+
+### Solar Forecasting
+Modelos de series de tiempo en PyTorch para predecir generación fotovoltaica a partir de variables meteorológicas e históricos de planta. URL: https://Camilu-png.github.io/portfolio/projects/solar-forecasting
+
+## Trayectoria
+
+- Octubre 2026 — Aura, CS Girlies Annual Hackathon (Technology For Wellness). Sistema de alerta temprana de carga emocional que aprende un baseline personal a partir de voz, patrones de escritura y carga de calendario, y sugiere acciones concretas para recalibrarse. Camila estuvo a cargo del backend; el proyecto se desarrolló en menos de 48 horas por un equipo enteramente femenino e internacional. https://devpost.com/software/aura-w3myvu
+- Marzo 2026 — Título: Ingeniera Civil en Informática, UTFSM.
+- Marzo 2026 — Publicación: "Un algoritmo para la planificación de horarios de ayudantía", memoria de título, Repositorio USM. Analiza la asignación de horarios de ayudantías buscando maximizar la cantidad de estudiantes que pueden asistir a un bloque definido, con penalizaciones centradas en la preferencia horaria. https://repositorio.usm.cl/handle/123456789/78182
+- 2024 — Ayudante de Programación, UTFSM Casa Central. Durante dos semestres fue apoyo docente para estudiantes de primer año, guiándolos en estructuras de datos, algoritmos y resolución de problemas.
+- 2023 — Feria de software USM, Campus San Joaquín: NoiseTrack. Proyecto que detecta visualmente, mediante cámaras e inteligencia artificial, potenciales casos de riesgo auditivo en ambientes laborales ruidosos. https://usm.cl/noticias/sansanos-crean-software-para-la-proteccion-auditiva-en-ambientes-laborales-ruidosos/
+- 2022-2023 — Práctica profesional en IBM: desarrollo de interfaces con Angular en entornos productivos y gestión de infraestructura en Azure, configurando workbooks para visualización de métricas. Trabajo en equipo bajo metodología Scrum.
+- 2022-2023 — Voluntaria, Technovation Girls Chile: lideró dos equipos de niñas para que desarrollaran una aplicación que apoyara a un objetivo de desarrollo sostenible, con un equipo de la categoría Seniors y otro de Beginners.
+- S1 2022 — Coautora del libro "Humanidades digitales: Reflexiones en torno a la sociedad de la información y desarrollo" (Editorial USM), con el ensayo "Consideraciones en torno a la política nacional de inteligencia artificial". https://vinculacion.usm.cl/noticias/editorial-usm-lanza-libro-que-compila-ensayos-de-estudiantes-de-ingenieria-civil-informatica/
+
+## Publicaciones
+
+- "Un algoritmo para la planificación de horarios de ayudantía" (marzo 2026), memoria de título, Repositorio USM. https://repositorio.usm.cl/handle/123456789/78182
+- "Humanidades digitales: Reflexiones en torno a la sociedad de la información y desarrollo" (Editorial USM, 2022), coautora. Ensayo: "Consideraciones en torno a la política nacional de inteligencia artificial".
+
+## Skills
+
+Flutter, Dart, Python, PyTorch, TypeScript, React, Angular, machine learning, optimización, redes neuronales, series de tiempo, SQL, Git, APIs REST, bases de datos, algoritmos.
+
+## Fuera del código
+
+Tapestry crochet, ocarina, lectura, plantas y Ada, su gata calicó, que es la mascota delmsitio. Ver https://Camilu-png.github.io/portfolio/about
+
+## Enlaces
+
+- Portafolio: https://Camilu-png.github.io/portfolio/
+- GitHub: https://github.com/Camilu-png
+- LinkedIn: https://linkedin.com/in/camila-arancibia/
+- Sitemap: https://Camilu-png.github.io/portfolio/sitemap.xml

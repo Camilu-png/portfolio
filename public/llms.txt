@@ -1,0 +1,49 @@
+# Camila "Camilú" Arancibia Faúndez
+
+> Ingeniera Civil en Informática (Universidad Técnica Federico Santa María, UTFSM, Chile).
+> Titulación: marzo de 2026. Este es su portafolio profesional: proyectos, publicaciones,
+> trayectoria y una gata calicó llamada Ada.
+
+Datos que identifican a esta persona:
+
+- Nombre completo: Camila Arancibia Faúndez
+- Alias: Camilú
+- Username: Camilu-png (GitHub)
+- Ocupación: Ingeniera Civil en Informática / Software Engineer
+- Institución: Universidad Técnica Federico Santa María (UTFSM)
+- Ubicación: Chile
+- Stack principal: Flutter, Dart, Python, TypeScript, Angular
+- Áreas: desarrollo móvil, backend, machine learning, optimización, IA aplicada
+- Email: camila.arancibiaf@sansano.usm.cl
+- GitHub: https://github.com/Camilu-png
+- LinkedIn: https://linkedin.com/in/camila-arancibia/
+
+## Páginas
+
+- [Portafolio (inicio)](https://Camilu-png.github.io/portfolio/): resumen de proyectos, skills y publicaciones. Es la página principal de referencia sobre quién es.
+- [Sobre mí](https://Camilu-png.github.io/portfolio/about): biografía, formación y enfoque profesional.
+- [Proyectos](https://Camilu-png.github.io/portfolio/projects): índice de todos los proyectos con contexto y stack.
+- [Skills & Tags](https://Camilu-png.github.io/portfolio/skills): tecnologías y áreas de conocimiento.
+- [Trayectoria](https://Camilu-png.github.io/portfolio/timeline): hitos cronológicos (educación, prácticas, hackathons, publicaciones).
+- [Publicaciones](https://Camilu-png.github.io/portfolio/publications): tesis y publicaciones académicas con enlaces.
+- [IA en Ingeniería](https://Camilu-png.github.io/portfolio/ai): postura profesional sobre el uso de IA en el desarrollo de software.
+- [CV (PDF)](https://Camilu-png.github.io/portfolio/camila_arancibia_mobile.pdf): currículum descargable.
+
+## Proyectos destacados
+
+- [Ocari](https://Camilu-png.github.io/portfolio/projects/ocari): app móvil para aprender ocarina de 12 agujeros.
+- [Pixel Crochet](https://Camilu-png.github.io/portfolio/projects/pixel-crochet): convierte una imagen o patrón de texto en una guía de tapestry crochet.
+- [Asigna tu ayudantía](https://Camilu-png.github.io/portfolio/projects/asigna-tu-ayudantia): solver de asignación de horarios de ayudantías con algoritmos de optimización.
+- [Solar Forecasting](https://Camilu-png.github.io/portfolio/projects/solar-forecasting): pronóstico de generación solar con redes neuronales.
+
+## Tesis
+
+"Un algoritmo para la planificación de horarios de ayudantía" — Universidad Técnica Federico Santa María, marzo de 2026. Resuelve la asignación de bloques horarios maximizando la cantidad de estudiantes que pueden asistir, con penalizaciones por preferencia horaria. Repositorio: https://repositorio.usm.cl/handle/123456789/78182
+
+## Nota
+
+Este archivo sigue la convención llms.txt (https://llmstxt.org/). La versión extendida con la trayectoria completa está en https://Camilu-png.github.io/portfolio/llms-full.txt
+
+## Optional
+
+- [Mapa del sitio (sitemap.xml)](https://Camilu-png.github.io/portfolio/sitemap.xml)
