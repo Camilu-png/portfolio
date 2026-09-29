@@ -92,6 +92,16 @@ function ProjectDetail() {
                 <Github className="h-4 w-4" aria-hidden="true" /> Repositorio
               </a>
             ) : null}
+            {project.thesis ? (
+              <a
+                href={project.thesis}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm transition-colors hover:border-secondary hover:text-secondary"
+              >
+                <ExternalLink className="h-4 w-4" aria-hidden="true" /> Tesis publicada
+              </a>
+            ) : null}
             {project.demo ? (
               <a
                 href={project.demo}

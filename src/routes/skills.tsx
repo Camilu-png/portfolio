@@ -10,7 +10,7 @@ export const Route = createFileRoute("/skills")({
       {
         name: "description",
         content:
-          "Tecnologías de Camilú derivadas de sus proyectos reales: Flutter, Dart, Python, PyTorch, FastAPI, optimización y más.",
+          "Tecnologías de Camilú derivadas de sus proyectos reales: Flutter, Dart, Python, Simulated Annealing, optimización y más.",
       },
       { property: "og:title", content: "Skills & Tags — Camilú" },
       {
@@ -26,8 +26,11 @@ export const Route = createFileRoute("/skills")({
 
 const groups: { name: string; tags: string[] }[] = [
   { name: "Móvil & Producto", tags: ["Flutter", "Dart", "Mobile", "UX", "Pixel Art", "Audio"] },
-  { name: "Backend & Datos", tags: ["Python", "FastAPI", "Docker", "Data", "React"] },
-  { name: "Modelos & Algoritmos", tags: ["Machine Learning", "PyTorch", "Optimization"] },
+  { name: "Datos & Herramientas", tags: ["Python", "Pandas", "Data", "Jupyter"] },
+  {
+    name: "Modelos & Algoritmos",
+    tags: ["Machine Learning", "PyTorch", "Optimization", "MILP", "Simulated Annealing"],
+  },
 ];
 
 function SkillsPage() {

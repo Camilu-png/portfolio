@@ -16,6 +16,7 @@ export interface Project {
   summary: string;
   github?: string;
   demo?: string;
+  thesis?: string;
   image?: string;
   gallery?: string[];
   mascot: "ocarina" | "yarn" | "curious" | "sleepy";
@@ -145,16 +146,24 @@ export const projects: Project[] = [
   },
   {
     slug: "asigna-tu-ayudantia",
-    title: "Asigna tu ayudantia",
-    subtitle: "Asignación de ayudantías con algoritmos de optimización",
+    title: "Planificación de horarios de ayudantía",
+    subtitle: "Memoria de título en la UTFSM: Simulated Annealing y programación lineal entera",
     year: "2026",
     status: "Publicado",
     featured: true,
-    tags: ["Python", "Optimization", "FastAPI", "React", "Docker"],
+    tags: ["Python", "Optimization", "MILP", "Simulated Annealing", "Pandas", "Jupyter"],
     summary:
-      "Sistema que asigna ayudantes a asignaturas considerando preferencias, disponibilidad horaria, carga académica y requisitos del ramo.",
-    github: "https://github.com/",
-    demo: "https://github.com/Camilu-png/student-assistant-scheduling",
+      "Mi memoria de título en la UTFSM. Modela la asignación de ayudantías como un problema de timetable universitario y la resuelve de dos formas independientes —Simulated Annealing y un modelo de programación lineal entera— para medirlas sobre 618 estudiantes reales en vez de casos inventados.",
+    github: "https://github.com/Camilu-png/student-assistant-scheduling",
+    thesis: "https://repositorio.usm.cl/handle/123456789/78182",
+    image: "asigna-tu-ayudantia.webp",
+    gallery: [
+      "comparacion-general.webp",
+      "comparacion-fitness.webp",
+      "comparacion-tiempos.webp",
+      "comparacion-tiempos-log.webp",
+      "movimientos.webp",
+    ],
     mascot: "curious",
     accent: "primary",
     mockup: "board",
@@ -162,42 +171,51 @@ export const projects: Project[] = [
       {
         heading: "Resumen",
         body: [
-          "Cada semestre la asignación de ayudantías se resuelve con planillas, correos y mucha paciencia. El resultado casi siempre deja a alguien con tope de horario.",
-          "Este sistema modela la asignación como un problema de optimización y entrega una propuesta de asignación en segundos, con explicación de por qué quedó así.",
+          "Cada semestre, asignar ayudantías se resuelve con planillas y correos, y el resultado suele dejar a alguien con el día partido. Este proyecto es mi memoria de título para optar por Ingeniería Civil en Informática en la UTFSM: modelar ese problema como un Educational Timetabling Problem y resolverlo automáticamente, priorizando que la mayor cantidad de estudiantes pueda asistir al bloque de ayudantía.",
+          "Lo resolví dos veces, con dos métodos independientes, para poder compararlos: un modelo de programación lineal entera con PuLP, que entrega el óptimo, y una metaheurística Simulated Annealing sobre una solución greedy inicial. Después evalué ambos con datos reales de la Casa Central Valparaíso, no con benchmarks sintéticos.",
         ],
       },
       {
         heading: "Problema",
         body: [
-          "Hay más restricciones de las que caben en la cabeza: disponibilidad horaria, ramos aprobados, preferencias de los ayudantes, preferencias de los profesores, cupos por asignatura y equidad en la carga.",
-          "Una solución manual tiende a optimizar para quien respondió primero el correo, no para el conjunto.",
+          "Cada ayudante recibe un bloque para realizar la ayudantía por semana y solo puede recibirlo en ciertas franjas horarias. Hay bloques prohibidos por política institucional. Además, cada estudiante tiene su propio horario, con clases y con actividades de otros ramos. El objetivo no es simplemente ocupar todos los bloques: es elegir en cuáles poner las ayudantías para maximizar la asistencia y, en segundo lugar, que ese bloque no entorpezca la jornada al estudiante, haciendo que, aunque pueda asistir, decida no ir.",
+          "El proceso manual resolvía esto minimizando la cantidad de estudiantes que no pueden asistir a la ayudantía por choque de horario, pero no tomaba en cuenta que algunos horarios, aunque tengan la misma cantidad de asistencia, son mejores que otros. El proceso que se suele utilizar en la universidad no toma en cuenta que los bloques de la madrugada, noche o aquellos que causan que el estudiante posea una ventana, generan que este prefiera no asistir a ayudantía.",
         ],
       },
       {
         heading: "Enfoque",
         body: [
-          "Formulación como problema de asignación con restricciones duras (elegibilidad, topes de horario, cupos) y blandas (preferencias, equidad) ponderadas en la función objetivo.",
-          "Resolución exacta con programación lineal entera cuando el tamaño lo permite, y una heurística golosa con búsqueda local como respaldo para instancias grandes.",
-          "Cada asignación viene con trazabilidad: qué restricción pesó y qué preferencia se sacrificó.",
+          "La representación es un tensor binario X[bloque, día, ayudante]. Cada instancia es una asignatura, sobre una grilla de 10 bloques por 5 días. La entrada son matrices construidas desde las planillas reales de la UTFSM, donde 0 es libre, 1 es clase y 2 es actividad relacionada con el ramo.",
+          "Las restricciones duras son: el ayudante solo puede recibir bloques en los que está disponible, un bloque no recibe dos ayudantes, los bloques prohibidos no se usan, cada ayudante recibe exactamente un bloque y cada estudiante asiste a una ayudantía por semana. Las blandas llevan peso y se restan: días libres, bloques nocturnos, bloques extremos del día, ventanas de tiempo libre alrededor del bloque y adyacencia con actividades del ramo.",
+          "Los dos solvers comparten exactamente esos mismos pesos, para que la comparación sea justa. La función objetivo es una suma ponderada de la asistencia de los estudiantes a la ayudantía, menos los conflictos que genera asistir a ese bloque. En caso de que un estudiante pueda asistir a más de una ayudantía, se le asigna a la que mejor le convenga.",
         ],
       },
       {
-        heading: "Detalles técnicos",
+        heading: "Resultados",
         body: [
-          "Backend en Python con FastAPI, solver de optimización y validación de datos de entrada antes de resolver.",
-          "Frontend en React para cargar postulaciones, revisar la propuesta y ajustar manualmente casos particulares.",
-          "Todo empaquetado con Docker para que el despliegue no dependa del entorno de quien lo instala.",
+          "Sobre las 12 asignaturas medidas (618 estudiantes), la asignación manual llegaba al 92,1% de asistencia. Simulated Annealing llegó al 99,8% y el solver al 99,9%: los dos recuperaron a los 51 estudiantes que el horario manual dejaba fuera.",
+          "El solver ganó en fitness en las 12 asignaturas, pero costó 6,9 veces más: 0,96 segundos de media contra 0,14. Su peor caso fueron 4,5 segundos, en la asignatura con más ayudantes. Simulated Annealing es mucho más variable entre corridas; la del solver no lo es, porque el modelo es determinista y devuelve siempre la misma solución.",
+          "El hallazgo que más me costó ver: en INF280 el solver dejó afuera a 1 de 59 estudiantes a propósito, y esa solución igual puntúa más alto, porque el objetivo es una suma ponderada y no una prioridad absoluta. El modelo canjea asistencia por menos penalización por su cuenta. Eso hay que decidirlo explícitamente, no dejarlo implícito en los pesos.",
+        ],
+      },
+      {
+        heading: "Cómo lo validé",
+        body: [
+          "Simulated Annealing es estocástico y el código no fija semilla, así que una sola corrida no dice nada. Por eso repetí 30, 100 y 1.000 veces cada algoritmo en cada asignatura: 24.000 corridas en total, guardando fitness, asistencia, tiempo y la solución completa de cada una, para poder medir la varianza en vez de elegir el mejor caso.",
+          "Antes de eso hice dos barridos: entre 1.000 y 1.512 configuraciones de Simulated Annealing por asignatura (temperatura inicial y final, alpha y tope de iteraciones), y 16.807 combinaciones de los cinco pesos. La calidad de la solución depende más de cómo se penaliza que de qué algoritmo se use.",
+          "El análisis está en notebooks: comparaciones entre métodos, distribución de horarios por asignatura y detección de bloques donde no hay ningún ayudante disponible. Esos últimos son 93 de 650 en los datos reales, y son un techo que ningún algoritmo puede levantar.",
         ],
       },
     ],
     challenges: [
-      "Traducir reglas informales ('el profe prefiere que ya haya sido ayudante') a restricciones formales.",
-      "Evitar soluciones matemáticamente óptimas pero humanamente injustas.",
-      "Mantener tiempos de respuesta razonables cuando el número de postulaciones crece.",
+      "Formular el mismo problema de dos maneras tan distintas —un modelo exacto y una búsqueda estocástica— y que las dos den respuestas defendibles.",
+      "Sacar conclusiones de un algoritmo que devuelve un resultado distinto en cada corrida, sin semilla fija y con el ruido propio de la metaheurística.",
+      "Que el óptimo matemático no siempre sea la mejor decisión: el solver gana en fitness y aun así deja a estudiantes sin cobertura.",
     ],
     learned: [
-      "Que la parte difícil de la optimización no es el solver, es el modelamiento.",
-      "A explicar resultados de un algoritmo a personas que no van a leer la función objetivo.",
+      "Que lo difícil de la optimización no es el solver, es decidir qué se penaliza y cuánto. Cambiar los pesos cambia la solución más que cambiar el algoritmo.",
+      "Que un resultado sin repetir no es un resultado, y que hay que reportar la varianza completa —promedio, desviación y peor caso— en vez de la corrida que salió bien.",
+      "A mirar los datos antes de modelarlos: los bloques sin ningún ayudante disponible son la restricción de verdad, y no aparece en ningún enunciado del problema.",
     ],
   },
   {
